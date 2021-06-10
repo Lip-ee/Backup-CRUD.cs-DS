@@ -39,7 +39,7 @@
             this.livroBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.livroBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1_Biblioteca = new Proj_Biblioteca.Dados.DataSet1_Biblioteca();
+            this.dataSet1_Biblioteca = new Proj_Biblioteca.Dados.DataSet_Biblioteca();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -64,8 +64,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.livroTableAdapter = new Proj_Biblioteca.Dados.DataSet1_BibliotecaTableAdapters.LivroTableAdapter();
-            this.tableAdapterManager = new Proj_Biblioteca.Dados.DataSet1_BibliotecaTableAdapters.TableAdapterManager();
+            this.livroTableAdapter = new Proj_Biblioteca.Dados.DataSet_BibliotecaTableAdapters.LivroTableAdapter();
+            this.tableAdapterManager = new Proj_Biblioteca.Dados.DataSet_BibliotecaTableAdapters.TableAdapterManager();
             iDLabel = new System.Windows.Forms.Label();
             tituloLabel = new System.Windows.Forms.Label();
             autoresLabel = new System.Windows.Forms.Label();
@@ -423,7 +423,7 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.LivroTableAdapter = this.livroTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Proj_Biblioteca.Dados.DataSet1_BibliotecaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = Proj_Biblioteca.Dados.DataSet_BibliotecaTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // frmCadLivros
             // 
@@ -463,10 +463,10 @@
 
         #endregion
 
-        private Dados.DataSet1_Biblioteca dataSet1_Biblioteca;
+        private Dados.DataSet_Biblioteca dataSet1_Biblioteca;
         private System.Windows.Forms.BindingSource livroBindingSource;
-        private Dados.DataSet1_BibliotecaTableAdapters.LivroTableAdapter livroTableAdapter;
-        private Dados.DataSet1_BibliotecaTableAdapters.TableAdapterManager tableAdapterManager;
+        private Dados.DataSet_BibliotecaTableAdapters.LivroTableAdapter livroTableAdapter;
+        private Dados.DataSet_BibliotecaTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator livroBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;

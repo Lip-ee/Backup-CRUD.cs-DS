@@ -10,3 +10,4 @@ C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblio
 C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.exe
 C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.pdb
 C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.Formulários.frmConsultaLivros.resources
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.Formulários.frmCadLivros2.resources

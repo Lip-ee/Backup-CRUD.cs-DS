@@ -32,10 +32,10 @@
             this.cADASTROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lIVROSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.lIVROS2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pESSOASFILTROToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rELATÓRIOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lIVROS2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +66,21 @@
             // lIVROSToolStripMenuItem
             // 
             this.lIVROSToolStripMenuItem.Name = "lIVROSToolStripMenuItem";
-            this.lIVROSToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.lIVROSToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.lIVROSToolStripMenuItem.Text = "LIVROS";
             this.lIVROSToolStripMenuItem.Click += new System.EventHandler(this.lIVROSToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(134, 6);
+            // 
+            // lIVROS2ToolStripMenuItem
+            // 
+            this.lIVROS2ToolStripMenuItem.Name = "lIVROS2ToolStripMenuItem";
+            this.lIVROS2ToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.lIVROS2ToolStripMenuItem.Text = "LIVROS 2";
+            this.lIVROS2ToolStripMenuItem.Click += new System.EventHandler(this.lIVROS2ToolStripMenuItem_Click);
             // 
             // cONSULTAToolStripMenuItem
             // 
@@ -95,13 +102,6 @@
             this.rELATÓRIOToolStripMenuItem.Name = "rELATÓRIOToolStripMenuItem";
             this.rELATÓRIOToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.rELATÓRIOToolStripMenuItem.Text = "RELATÓRIO";
-            // 
-            // lIVROS2ToolStripMenuItem
-            // 
-            this.lIVROS2ToolStripMenuItem.Name = "lIVROS2ToolStripMenuItem";
-            this.lIVROS2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.lIVROS2ToolStripMenuItem.Text = "LIVROS 2";
-            this.lIVROS2ToolStripMenuItem.Click += new System.EventHandler(this.lIVROS2ToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
