@@ -282,54 +282,54 @@
             // 
             // iDTextBox
             // 
-            this.iDTextBox.BackColor = System.Drawing.Color.Silver;
-            this.iDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.iDTextBox.BackColor = System.Drawing.Color.White;
+            this.iDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.livroBindingSource, "ID", true));
             this.iDTextBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iDTextBox.ForeColor = System.Drawing.Color.Black;
             this.iDTextBox.Location = new System.Drawing.Point(156, 57);
             this.iDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.iDTextBox.Name = "iDTextBox";
-            this.iDTextBox.Size = new System.Drawing.Size(112, 16);
+            this.iDTextBox.Size = new System.Drawing.Size(112, 23);
             this.iDTextBox.TabIndex = 2;
             // 
             // tituloTextBox
             // 
-            this.tituloTextBox.BackColor = System.Drawing.Color.Silver;
-            this.tituloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tituloTextBox.BackColor = System.Drawing.Color.White;
+            this.tituloTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tituloTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.livroBindingSource, "Titulo", true));
             this.tituloTextBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tituloTextBox.ForeColor = System.Drawing.Color.Black;
             this.tituloTextBox.Location = new System.Drawing.Point(156, 89);
             this.tituloTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.tituloTextBox.Name = "tituloTextBox";
-            this.tituloTextBox.Size = new System.Drawing.Size(265, 16);
+            this.tituloTextBox.Size = new System.Drawing.Size(265, 23);
             this.tituloTextBox.TabIndex = 4;
             // 
             // autoresTextBox
             // 
-            this.autoresTextBox.BackColor = System.Drawing.Color.Silver;
-            this.autoresTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.autoresTextBox.BackColor = System.Drawing.Color.White;
+            this.autoresTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.autoresTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.livroBindingSource, "Autores", true));
             this.autoresTextBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoresTextBox.ForeColor = System.Drawing.Color.Black;
             this.autoresTextBox.Location = new System.Drawing.Point(156, 121);
             this.autoresTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.autoresTextBox.Name = "autoresTextBox";
-            this.autoresTextBox.Size = new System.Drawing.Size(265, 16);
+            this.autoresTextBox.Size = new System.Drawing.Size(265, 23);
             this.autoresTextBox.TabIndex = 6;
             // 
             // editoraTextBox
             // 
-            this.editoraTextBox.BackColor = System.Drawing.Color.Silver;
-            this.editoraTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.editoraTextBox.BackColor = System.Drawing.Color.White;
+            this.editoraTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.editoraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.livroBindingSource, "Editora", true));
             this.editoraTextBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editoraTextBox.ForeColor = System.Drawing.Color.Black;
             this.editoraTextBox.Location = new System.Drawing.Point(558, 57);
             this.editoraTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.editoraTextBox.Name = "editoraTextBox";
-            this.editoraTextBox.Size = new System.Drawing.Size(209, 16);
+            this.editoraTextBox.Size = new System.Drawing.Size(209, 23);
             this.editoraTextBox.TabIndex = 8;
             // 
             // dataEdicaoDateTimePicker
@@ -344,15 +344,15 @@
             // 
             // assuntoTextBox
             // 
-            this.assuntoTextBox.BackColor = System.Drawing.Color.Silver;
-            this.assuntoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.assuntoTextBox.BackColor = System.Drawing.Color.White;
+            this.assuntoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.assuntoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.livroBindingSource, "Assunto", true));
             this.assuntoTextBox.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assuntoTextBox.ForeColor = System.Drawing.Color.Black;
             this.assuntoTextBox.Location = new System.Drawing.Point(558, 121);
             this.assuntoTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.assuntoTextBox.Name = "assuntoTextBox";
-            this.assuntoTextBox.Size = new System.Drawing.Size(209, 16);
+            this.assuntoTextBox.Size = new System.Drawing.Size(209, 23);
             this.assuntoTextBox.TabIndex = 12;
             // 
             // livroDataGridView
