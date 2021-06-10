@@ -119,6 +119,7 @@
             // txtTitulo
             // 
             this.txtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTitulo.Enabled = false;
             this.txtTitulo.Location = new System.Drawing.Point(173, 62);
             this.txtTitulo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTitulo.Name = "txtTitulo";
@@ -128,6 +129,7 @@
             // txtAutores
             // 
             this.txtAutores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAutores.Enabled = false;
             this.txtAutores.Location = new System.Drawing.Point(173, 94);
             this.txtAutores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAutores.Name = "txtAutores";
@@ -137,6 +139,7 @@
             // txtEditora
             // 
             this.txtEditora.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEditora.Enabled = false;
             this.txtEditora.Location = new System.Drawing.Point(521, 30);
             this.txtEditora.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEditora.Name = "txtEditora";
@@ -146,6 +149,7 @@
             // txtAssunto
             // 
             this.txtAssunto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAssunto.Enabled = false;
             this.txtAssunto.Location = new System.Drawing.Point(521, 94);
             this.txtAssunto.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAssunto.Name = "txtAssunto";
@@ -154,6 +158,7 @@
             // 
             // dtpDataEdicao
             // 
+            this.dtpDataEdicao.Enabled = false;
             this.dtpDataEdicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDataEdicao.Location = new System.Drawing.Point(521, 61);
             this.dtpDataEdicao.Name = "dtpDataEdicao";
@@ -162,7 +167,8 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(173, 169);
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Location = new System.Drawing.Point(248, 170);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(151, 154);
             this.btnNew.TabIndex = 13;
@@ -172,7 +178,8 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(330, 169);
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Location = new System.Drawing.Point(405, 170);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(194, 74);
             this.btnEdit.TabIndex = 14;
@@ -181,7 +188,8 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(330, 249);
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Location = new System.Drawing.Point(405, 250);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(194, 74);
             this.btnDelete.TabIndex = 15;
@@ -190,21 +198,26 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(530, 267);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(623, 268);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(184, 56);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnExit
             // 
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Location = new System.Drawing.Point(764, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(91, 56);
             this.btnExit.TabIndex = 17;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmCadLivros2
             // 

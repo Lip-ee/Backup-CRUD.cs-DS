@@ -36,10 +36,10 @@ namespace Proj_Biblioteca
 
         private void lIVROS2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //// Instanciar a classe
-            //frmCadLivros2 objCadLivros = new frmCadLivros2();
-            //objCadLivros.MdiParent = this;
-            //objCadLivros.Show();
+            // Instanciar a classe
+            frmCadLivros2 objCadLivros = new frmCadLivros2();
+            objCadLivros.MdiParent = this;
+            objCadLivros.Show();
         }
     }
 }

@@ -18,6 +18,9 @@ namespace Proj_Biblioteca.Formulários
             InitializeComponent();
         }
 
+        // Variável para checar se algo está sendo executado
+        bool workingProgress;
+
         // BOTÕES
 
         // Botão "&New"
@@ -27,9 +30,17 @@ namespace Proj_Biblioteca.Formulários
             if(btnNew.Text == "&New")
             {
                 // 1 - Configuração dos Campos
+                workingProgress = true; // Tarefa em execução!
+
+                btnCancel.Visible = true; // Botão Cancelar Visível
+
                 HabilitarControles(); // Habilita todas as TextBox
                 DesabilitarID(); // Desabilita a TextBox do ID
+
                 txtTitulo.Focus(); // Foca na TextBox do Titulo
+
+                btnEdit.Enabled = false; // Botão de Edição desabilitado
+                btnDelete.Enabled = false; // Botão Delete desabilitado
 
                 // 2 - Botão "&Save" aparece (de "&New" para "&Save")
                 btnNew.Text = "&Save"; 
@@ -55,6 +66,11 @@ namespace Proj_Biblioteca.Formulários
                 // 5 - Configuração dos Campos
                 LimparControles();
                 DesabilitarControles();
+
+                workingProgress = false;
+
+                btnCancel.Visible = true; // Botão Cancelar Visível
+
                 btnNew.Text = "&New"; // Botão "&New" aparece novamente (de "&Save" para "&New")
             }
         }
@@ -62,6 +78,43 @@ namespace Proj_Biblioteca.Formulários
         // Botão "&Edit" [...]
 
         // Botão "&Cancel" [...]
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            // Configuração dos Campos
+            DesabilitarControles();
+            HabilitarID();
+
+            LimparControles();
+
+            btnEdit.Enabled = true; // Botão de Edição habilitado
+            btnDelete.Enabled = true; // Botão Delete habilitado
+
+            btnCancel.Visible = false; // Botão se torna Invisível
+            btnNew.Text = "&New"; // Botão "&New" aparece novamente (de "&Save" para "&New")
+
+            workingProgress = false; // Nada está sendo executado
+        }
+
+        // Botão "Exit"
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if(workingProgress == true)
+            {
+                if (MessageBox.Show("Parece que você está no meio de uma modificação ainda não salva no sistema." +
+                    "Se o cadastro for fechado sem salvar, erros podem aparecer. \nDeseja mesmo fechar?", "AVISO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    // Fecha o Formulário
+                    this.Close();
+                };
+                
+            }
+            else
+            {
+                // Fecha o Formulário
+                this.Close();
+            }
+            
+        }
 
 
 
@@ -73,10 +126,10 @@ namespace Proj_Biblioteca.Formulários
         private void HabilitarControles()
         {
             // Percorre os controles do formulário
-            foreach(Control controle in this.Controls)
+            foreach (Control controle in this.Controls)
             {
                 // Se esse controle for uma textbox ou um datetimepicker, então:
-                if((controle is TextBox) || (controle is DateTimePicker))
+                if ((controle is TextBox) || (controle is DateTimePicker))
                 {
                     // Habilite-o
                     controle.Enabled = true;
@@ -115,7 +168,7 @@ namespace Proj_Biblioteca.Formulários
                 }
 
                 // Se esse controle for um datetimepicker
-                else if(controle is DateTimePicker)
+                else if (controle is DateTimePicker)
                 {
                     // Transforme-a em Data Atual
                     (controle as DateTimePicker).Value = DateTime.Now;
@@ -154,5 +207,7 @@ namespace Proj_Biblioteca.Formulários
                 }
             }
         }
+
+        
     }
 }
