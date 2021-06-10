@@ -1,0 +1,12 @@
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\bin\Debug\Proj_Biblioteca.exe.config
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\bin\Debug\Proj_Biblioteca.exe
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\bin\Debug\Proj_Biblioteca.pdb
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.csprojAssemblyReference.cache
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.Formulários.frmCadLivros.resources
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.frmMenu.resources
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.Properties.Resources.resources
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.csproj.GenerateResource.cache
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.exe
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.pdb
+C:\Users\lipee\source\repos\Sol_Biblioteca\Proj_Biblioteca\obj\Debug\Proj_Biblioteca.Formulários.frmConsultaLivros.resources
