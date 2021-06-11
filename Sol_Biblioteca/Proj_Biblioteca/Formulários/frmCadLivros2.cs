@@ -36,6 +36,7 @@ namespace Proj_Biblioteca.Formulários
 
                 HabilitarControles(); // Habilita todas as TextBox
                 DesabilitarID(); // Desabilita a TextBox do ID
+                LimparControles();
 
                 txtTitulo.Focus(); // Foca na TextBox do Titulo
 
@@ -66,18 +67,158 @@ namespace Proj_Biblioteca.Formulários
                 // 5 - Configuração dos Campos
                 LimparControles();
                 DesabilitarControles();
+                HabilitarID();
+
+                btnCancel.Visible = false;
+
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = true;
 
                 workingProgress = false;
-
-                btnCancel.Visible = true; // Botão Cancelar Visível
 
                 btnNew.Text = "&New"; // Botão "&New" aparece novamente (de "&Save" para "&New")
             }
         }
 
-        // Botão "&Edit" [...]
+        // Botão "&Edit"
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            // 1 - Instanciar o obj do TableAdapter (criar obj)
+            LivroTableAdapter objLivro = new LivroTableAdapter();
 
-        // Botão "&Cancel" [...]
+            // Configuração dos Campos
+            workingProgress = true;
+            HabilitarControles();
+            btnCancel.Visible = true;
+
+            // 2 - Quando o botão "&Edit" for pressionado:
+            if (btnEdit.Text == "&Edit")
+            {
+                // Botão "Store Value" aparece
+                btnEdit.Text = "StoreValue";
+                btnDelete.Enabled = false;
+
+                // Se o valor (ID) for nulo
+                if (txtID.Text == "")
+                {
+                    MessageBox.Show("Parece que você não inseriu nenhum ID. \nTente novamente...", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DesabilitarControles();
+                    HabilitarID();
+                    btnCancel.Visible = false;
+                    btnDelete.Enabled = true;
+                    btnEdit.Text = "&Edit";
+                    workingProgress = false;
+                }
+
+                // Se o valor (ID) não for nulo
+                else
+                {
+                    // Pesquisar valor (ID) no banco de dados
+                    DataTable dt = objLivro.Pesquisa_Livro(int.Parse(txtID.Text));
+
+                    // Configuração dos Botões
+                    AtivarBotoes();
+                    btnNew.Enabled = false;
+                    btnDelete.Enabled = false;
+                    DesabilitarID();
+
+                    // Se essa pesquisa retornar 0 (não foi encontrado o ID no banco de dados):
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Registro não encontrado!\nPor favor, verifique o ID fornecido...");
+                        btnEdit.Text = "&Edit";
+                        workingProgress = false;
+                    }
+
+                    // Se essa pesquisa retornar >= 1 (ID encontrado no banco de dados):
+                    else
+                    {
+                        // Preencher as TextBoxes com o que foi encontrado no banco de dados:
+                        txtTitulo.Text = dt.Rows[0]["Titulo"].ToString();
+                        txtAutores.Text = dt.Rows[0]["Autores"].ToString();
+                        txtEditora.Text = dt.Rows[0]["Editora"].ToString();
+                        dtpDataEdicao.Value = (DateTime)dt.Rows[0]["DataEdicao"];
+                        txtAssunto.Text = dt.Rows[0]["Assunto"].ToString();
+                    }
+
+                    
+                }
+            }
+
+            // Quando o botão "Store Value" for pressionado:
+            else
+            {
+                // Alterar os dados (Update)
+                objLivro.Update(txtTitulo.Text,
+                    txtAutores.Text,
+                    txtEditora.Text,
+                    dtpDataEdicao.Value.ToString(),
+                    txtAssunto.Text,
+                    int.Parse(txtID.Text));
+
+                MessageBox.Show("Alteração realizada com Sucesso!");
+
+                DesabilitarControles();
+                HabilitarID();
+                LimparControles();
+                btnDelete.Enabled = true;
+                btnCancel.Visible = false;
+                btnEdit.Text = "&Edit";
+                btnNew.Enabled = true;
+            }
+        }
+
+        // Botão "&Delete"
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            // 1 - Instanciar o obj do TableAdapter (criar obj)
+            LivroTableAdapter objLivro = new LivroTableAdapter();
+
+            // Se o valor (ID) for nulo
+            if (txtID.Text == "")
+            {
+                MessageBox.Show("Parece que você não inseriu nenhum ID. \nTente novamente...", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DesabilitarControles();
+                HabilitarID();
+                btnCancel.Visible = false;
+            }
+
+            // Se o valor (ID) NÃO foi nulo
+            else
+            {
+                // Pesquisar valor (ID) no banco de dados
+                DataTable dt = objLivro.Pesquisa_Livro(int.Parse(txtID.Text));
+
+                // Se a pesquisa do ID retornar 0 (não foi encontrado o ID no banco de dados):
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Registro não encontrado!\nPor favor, verifique o ID fornecido...");
+                }
+
+                // Se a pesquisa do ID retornar >= 1 (ID foi encontrado no banco de dados):
+                else
+                {
+                    // Preencher as TextBoxes com o que foi encontrado no banco de dados:
+                    txtTitulo.Text = dt.Rows[0]["Titulo"].ToString();
+                    txtAutores.Text = dt.Rows[0]["Autores"].ToString();
+                    txtEditora.Text = dt.Rows[0]["Editora"].ToString();
+                    dtpDataEdicao.Value = (DateTime)dt.Rows[0]["DataEdicao"];
+                    txtAssunto.Text = dt.Rows[0]["Assunto"].ToString();
+
+                    // Verificação antes de Deletar
+                    if (MessageBox.Show("Você está prestes a excluir um registro. \nDeseja mesmo Deletar?", "Deletando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        objLivro.Delete(int.Parse(txtID.Text));
+                        LimparControles();
+                        HabilitarID();
+                    }
+                }
+
+                
+            }
+        }
+
+        // Botão "&Cancel"
         private void btnCancel_Click(object sender, EventArgs e)
         {
             // Configuração dos Campos
@@ -91,6 +232,9 @@ namespace Proj_Biblioteca.Formulários
 
             btnCancel.Visible = false; // Botão se torna Invisível
             btnNew.Text = "&New"; // Botão "&New" aparece novamente (de "&Save" para "&New")
+            btnNew.Enabled = true;
+
+            btnEdit.Text = "&Edit";
 
             workingProgress = false; // Nada está sendo executado
         }
@@ -98,16 +242,20 @@ namespace Proj_Biblioteca.Formulários
         // Botão "Exit"
         private void btnExit_Click(object sender, EventArgs e)
         {
+            // Se algum processo ainda não estiver salvo:
             if(workingProgress == true)
             {
+                // Pergunta se deseja fechar mesmo assim
                 if (MessageBox.Show("Parece que você está no meio de uma modificação ainda não salva no sistema." +
-                    "Se o cadastro for fechado sem salvar, erros podem aparecer. \nDeseja mesmo fechar?", "AVISO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    " Se o cadastro for fechado sem salvar, erros podem aparecer. \nDeseja mesmo fechar?", "AVISO!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
                 {
                     // Fecha o Formulário
                     this.Close();
                 };
                 
             }
+
+            // Se nenhum processo estiver em execução:
             else
             {
                 // Fecha o Formulário
@@ -152,8 +300,6 @@ namespace Proj_Biblioteca.Formulários
             }
         }
 
-
-
         // Função "Limpar Controles"
         private void LimparControles()
         {
@@ -176,15 +322,13 @@ namespace Proj_Biblioteca.Formulários
             }
         }
 
-
-
         // Função "Habilitar ID"
         private void HabilitarID()
         {
             // Percorre os controles do formulário
             foreach (Control controle in this.Controls)
             {
-                // Se esse controle for uma textbox ou um datetimepicker, então:
+                // Se esse controle for o campo do ID, então:
                 if (controle == txtID)
                 {
                     // Habilite-o
@@ -199,11 +343,26 @@ namespace Proj_Biblioteca.Formulários
             // Percorre os controles do formulário
             foreach (Control controle in this.Controls)
             {
-                // Se esse controle for uma textbox ou um datetimepicker, então:
+                // Se esse controle for o campo do ID, então:
                 if (controle == txtID)
                 {
                     // Habilite-o
                     controle.Enabled = false;
+                }
+            }
+        }
+
+        // Função "Ativar Botões"
+        private void AtivarBotoes()
+        {
+            // Percorre os controles do formulário
+            foreach (Control controle in this.Controls)
+            {
+                // Se esse controle for um botão, então:
+                if (controle is Button)
+                {
+                    // Habilite-o
+                    controle.Enabled = true;
                 }
             }
         }
